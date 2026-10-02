@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Категории хобби — Хоббипедия</title>
+  <meta name="description" content="Все категории Хоббипедии: творчество, спорт, коллекционирование, технологии, кулинария, природа, музыка, настольные игры, рукоделие, наука.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%232e6a4f'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Georgia'>Х</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true">Х</span>Хоббипедия</a>
+    <nav class="main-nav" aria-label="Основное меню">
+      <a href="catalog.html">Каталог</a>
+      <a href="categories.html" aria-current="page">Категории</a>
+      <a href="about.html">О проекте</a>
+    </nav>
+    <form class="header-search" action="catalog.html" method="get" role="search">
+      <label class="visually-hidden" for="header-q">Поиск хобби</label>
+      <input id="header-q" type="search" name="q" placeholder="Поиск по названию или тегу">
+    </form>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="page-head">
+    <h1>Категории</h1>
+    <p>У каждого хобби одна основная категория и несколько тегов. Нажмите на категорию, чтобы открыть её в каталоге с фильтрами.</p>
+  </div>
+
+  <div class="section category-grid" data-render="categories" data-descriptions></div>
+
+  <div data-render="category-sections"></div>
+
+  <noscript>
+    <p>Для списка категорий нужен JavaScript. Все страницы хобби лежат в папке <code>hobbies/</code>.</p>
+  </noscript>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Хоббипедия. Тексты написаны авторами проекта.</span>
+    <span><a href="about.html">О проекте и уровнях расходов</a></span>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

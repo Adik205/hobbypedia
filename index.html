@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Хоббипедия — энциклопедия хобби</title>
+  <meta name="description" content="Энциклопедия хобби: узнайте, сравните и выберите своё занятие по бюджету, времени, месту и формату.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%232e6a4f'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Georgia'>Х</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true">Х</span>Хоббипедия</a>
+    <nav class="main-nav" aria-label="Основное меню">
+      <a href="catalog.html">Каталог</a>
+      <a href="categories.html">Категории</a>
+      <a href="about.html">О проекте</a>
+    </nav>
+    <form class="header-search" action="catalog.html" method="get" role="search">
+      <label class="visually-hidden" for="header-q">Поиск хобби</label>
+      <input id="header-q" type="search" name="q" placeholder="Поиск по названию или тегу">
+    </form>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <h1>Найдите своё хобби</h1>
+    <p>Хоббипедия — энциклопедия увлечений. У каждого хобби одинаковый «паспорт»: бюджет, время, место, формат и сложность. Поэтому их легко сравнивать и выбирать.</p>
+    <form class="hero-search" action="catalog.html" method="get" role="search">
+      <label class="visually-hidden" for="hero-q">Поиск хобби</label>
+      <input id="hero-q" type="search" name="q" placeholder="Например: вязание, дома, недорого">
+      <button class="btn" type="submit">Найти</button>
+    </form>
+    <div class="quick-picks" aria-label="Быстрый подбор">
+      <a href="catalog.html?month=low&amp;place=home">🏠 Недорого и дома</a>
+      <a href="catalog.html?place=outdoor&amp;activity=active">🌳 Активно на улице</a>
+      <a href="catalog.html?format=group">👥 С друзьями</a>
+      <a href="catalog.html?time=lt2">⏱ До 2 часов в неделю</a>
+      <a href="catalog.html?diff=1,2">🌱 Легко начать</a>
+      <a href="catalog.html?activity=calm&amp;format=solo">🧘 Спокойно и одному</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Как пользоваться</h2>
+    </div>
+    <ol class="how-it-works">
+      <li><strong>1. Отфильтруйте</strong><p>В каталоге отметьте бюджет, время, место и формат. Останется 3–5 подходящих вариантов.</p></li>
+      <li><strong>2. Сравните</strong><p>На карточках видны все параметры сразу, открывать каждую страницу не нужно.</p></li>
+      <li><strong>3. Начните</strong><p>На странице хобби есть план старта: первый день, первая неделя, первый месяц.</p></li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Категории</h2>
+      <a href="categories.html">Все категории →</a>
+    </div>
+    <div class="category-grid" data-render="categories">
+      <noscript><p>Список категорий: <a href="categories.html">открыть</a>.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>С чего можно начать</h2>
+      <a href="catalog.html">Все хобби (<span data-render="total">20</span>) →</a>
+    </div>
+    <div class="card-grid" data-render="featured" data-slugs="vyazanie,beg,fotografiya,komnatnye-rasteniya,gitara,programmirovanie"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Хоббипедия. Тексты написаны авторами проекта.</span>
+    <span><a href="about.html">О проекте и уровнях расходов</a></span>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

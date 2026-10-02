@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--
+  ШАБЛОН СТРАНИЦЫ ХОББИ
+
+  Как создать новую страницу:
+  1. Скопируйте этот файл в папку hobbies/ и назовите его <slug>.html,
+     где slug — название латиницей через дефис (например, vyazanie.html).
+  2. Замените всё, что в квадратных скобках [ ... ].
+  3. Значения паспорта берите только из списков ниже и пишите точно так же,
+     как в js/data.js (иначе фильтры и паспорт будут расходиться).
+  4. Добавьте хобби в js/data.js (скопируйте любой блок и поправьте).
+  5. Удалите необязательные разделы, если сказать нечего: пустой раздел
+     хуже, чем его отсутствие. Уберите их и из оглавления.
+
+  Допустимые значения паспорта:
+    На старт / В месяц:  низкий (lvl-low) · средний (lvl-medium) · высокий (lvl-high)
+      пороги на старт:   до 10 000 ₸ · 10 000–50 000 ₸ · свыше 50 000 ₸
+      пороги в месяц:    до 5 000 ₸ · 5 000–20 000 ₸ · свыше 20 000 ₸
+    Время:       до 2 ч/нед · 2–5 ч/нед · 5+ ч/нед
+    Где:         дома · на улице · в студии / клубе (можно несколько через запятую)
+    Формат:      одному · с другими · по-разному
+    Активность:  спокойная · умеренная · активная
+    Сложность:   ●○○○○ 1 … ●●●●● 5
+
+  Готовый пример заполнения: hobbies/vyazanie.html
+-->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Название] — Хоббипедия</title>
+  <meta name="description" content="[Одно предложение: что это за хобби и что есть на странице]">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%232e6a4f'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Georgia'>Х</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true">Х</span>Хоббипедия</a>
+    <nav class="main-nav" aria-label="Основное меню">
+      <a href="../catalog.html">Каталог</a>
+      <a href="../categories.html">Категории</a>
+      <a href="../about.html">О проекте</a>
+    </nav>
+    <form class="header-search" action="../catalog.html" method="get" role="search">
+      <label class="visually-hidden" for="header-q">Поиск хобби</label>
+      <input id="header-q" type="search" name="q" placeholder="Поиск по названию или тегу">
+    </form>
+  </div>
+</header>
+
+<main class="article">
+
+  <nav class="breadcrumbs" aria-label="Навигация">
+    <a href="../index.html">Главная</a> ›
+    <a href="../catalog.html?category=[slug-категории]">[Категория]</a> ›
+    <span>[Название]</span>
+  </nav>
+
+  <header class="article-header">
+    <h1>[Название]</h1>
+    <div class="article-meta">
+      <a class="category-link" href="../catalog.html?category=[slug-категории]">[эмодзи] [Категория]</a>
+      <ul class="tag-list" aria-label="Теги">
+        <li><a href="../catalog.html?q=[тег]">[тег]</a></li>
+        <li><a href="../catalog.html?q=[тег]">[тег]</a></li>
+        <li><a href="../catalog.html?q=[тег]">[тег]</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="article-body">
+
+    <!-- ===== Паспорт хобби. Значения должны совпадать с js/data.js ===== -->
+    <aside class="infobox" aria-label="Паспорт хобби">
+      <div class="infobox-title">[Название]</div>
+      <!-- Вместо эмодзи можно вставить картинку с открытой лицензией:
+           <img src="../images/[slug].jpg" alt="[описание]"> -->
+      <div class="infobox-image" aria-hidden="true">[эмодзи]</div>
+      <table>
+        <tr><th>На старт</th><td><span class="lvl lvl-[low|medium|high]">[уровень]</span><span class="amount">≈ [0 000–0 000] ₸</span></td></tr>
+        <tr><th>В месяц</th><td><span class="lvl lvl-[low|medium|high]">[уровень]</span><span class="amount">≈ [0 000–0 000] ₸</span></td></tr>
+        <tr><th>Время</th><td>[до 2 ч/нед | 2–5 ч/нед | 5+ ч/нед]</td></tr>
+        <tr><th>Где</th><td>[дома, на улице, в студии / клубе]</td></tr>
+        <tr><th>Формат</th><td>[одному | с другими | по-разному]</td></tr>
+        <tr><th>Активность</th><td>[спокойная | умеренная | активная]</td></tr>
+        <tr><th>Сложность</th><td><span class="dots" title="[N] из 5">[●●○○○]</span> [N] из 5</td></tr>
+      </table>
+      <div class="infobox-footer">
+        <a class="btn" href="#kak-nachat">Перейти к плану старта</a>
+        <p class="infobox-note">Суммы примерные. <a href="../about.html#urovni">Что значат уровни</a></p>
+      </div>
+    </aside>
+
+    <!-- ===== 1. Вступление (2–3 предложения) ===== -->
+    <p class="lead"><strong>[Название]</strong> — [что это такое, 2–3 предложения].</p>
+
+    <p><a class="quick-start-link" href="#kak-nachat">→ Сразу к плану старта</a></p>
+
+    <!-- Оглавление: необязательные разделы добавляйте/удаляйте вместе с самими разделами -->
+    <nav class="toc" aria-label="Содержание">
+      <strong>Содержание</strong>
+      <ol>
+        <li><a href="#chem-zanimayutsya">Чем занимаются</a></li>
+        <li><a href="#komu-podoydet">Кому подойдёт</a></li>
+        <li><a href="#snaryazhenie">Снаряжение</a></li>
+        <li><a href="#zatraty">Затраты</a></li>
+        <li><a href="#gde-zanimatsya">Где заниматься</a></li>
+        <li><a href="#kak-nachat">Как начать</a></li>
+        <li><a href="#sovety">Советы и частые ошибки новичков</a></li>
+        <li><a href="#bezopasnost">Безопасность</a></li>
+        <li><a href="#istoriya">История</a></li>
+        <li><a href="#gde-uchitsya">Где учиться</a></li>
+        <li><a href="#soobshchestvo">Сообщество и мероприятия</a></li>
+        <li><a href="#dohod">Как превратить в доход</a></li>
+        <li><a href="#voprosy">Вопросы и ответы</a></li>
+        <li><a href="#pohozhie">Похожие хобби</a></li>
+      </ol>
+    </nav>
+
+    <!-- ===== 2. Чем занимаются (обязательный) ===== -->
+    <section id="chem-zanimayutsya">
+      <h2>Чем занимаются</h2>
+      <p>[Как выглядит одно обычное занятие: что человек делает, сколько это длится.]</p>
+    </section>
+
+    <!-- ===== 3. Кому подойдёт (обязательный) ===== -->
+    <section id="komu-podoydet">
+      <h2>Кому подойдёт</h2>
+      <div class="two-cols">
+        <div class="panel panel-accent">
+          <h3>Подойдёт, если вы…</h3>
+          <ul>
+            <li>[…]</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Может не понравиться, если вы…</h3>
+          <ul>
+            <li>[честно: кому это хобби не подойдёт]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. Снаряжение (обязательный) ===== -->
+    <section id="snaryazhenie">
+      <h2>Снаряжение</h2>
+      <div class="two-cols">
+        <div class="panel panel-accent">
+          <h3>Минимум для старта</h3>
+          <ul>
+            <li>[…]</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Можно докупить потом</h3>
+          <ul>
+            <li>[…]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. Затраты (обязательный; суммы как в паспорте) ===== -->
+    <section id="zatraty">
+      <h2>Затраты</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th></th><th>Сколько</th><th>Из чего складывается</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>На старт</th>
+              <td>≈ [0 000–0 000] ₸<br><span class="lvl lvl-[low|medium|high]">[уровень]</span></td>
+              <td>[…]</td>
+            </tr>
+            <tr>
+              <th>В месяц</th>
+              <td>≈ [0 000–0 000] ₸<br><span class="lvl lvl-[low|medium|high]">[уровень]</span></td>
+              <td>[…]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Где сэкономить</h3>
+      <ul>
+        <li>[…]</li>
+      </ul>
+    </section>
+
+    <!-- ===== 6. Где заниматься (обязательный) ===== -->
+    <section id="gde-zanimatsya">
+      <h2>Где заниматься</h2>
+      <ul>
+        <li><strong>Дома.</strong> […]</li>
+        <li><strong>На улице.</strong> […]</li>
+        <li><strong>В кружке, студии или клубе.</strong> […]</li>
+        <li><strong>Онлайн.</strong> […]</li>
+      </ul>
+    </section>
+
+    <!-- ===== 7. Как начать (обязательный) ===== -->
+    <section id="kak-nachat">
+      <h2>Как начать</h2>
+      <div class="stage">
+        <h3>Первый день</h3>
+        <ol class="steps">
+          <li>[…]</li>
+        </ol>
+      </div>
+      <div class="stage">
+        <h3>Первая неделя</h3>
+        <ol class="steps">
+          <li>[…]</li>
+        </ol>
+      </div>
+      <div class="stage">
+        <h3>Первый месяц</h3>
+        <ol class="steps">
+          <li>[…]</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== 8. Советы и частые ошибки новичков (обязательный) ===== -->
+    <section id="sovety">
+      <h2>Советы и частые ошибки новичков</h2>
+      <h3>Советы</h3>
+      <ul>
+        <li>[…]</li>
+      </ul>
+      <h3>Частые ошибки</h3>
+      <dl class="mistakes">
+        <dt>[Ошибка]</dt>
+        <dd>[Почему это проблема и как избежать.]</dd>
+      </dl>
+    </section>
+
+    <!-- ===== Необязательный: Безопасность (спорт, инструменты, риск травмы) ===== -->
+    <section id="bezopasnost">
+      <h2>Безопасность</h2>
+      <div class="callout">
+        <p>[Главное правило безопасности.]</p>
+      </div>
+      <ul>
+        <li>[…]</li>
+      </ul>
+    </section>
+
+    <!-- ===== Необязательный: История (коротко, если интересна) ===== -->
+    <section id="istoriya">
+      <h2>История</h2>
+      <p>[…]</p>
+    </section>
+
+    <!-- ===== Необязательный: Где учиться ===== -->
+    <section id="gde-uchitsya">
+      <h2>Где учиться</h2>
+      <ul>
+        <li>[книги, каналы, курсы]</li>
+      </ul>
+    </section>
+
+    <!-- ===== Необязательный: Сообщество и мероприятия ===== -->
+    <section id="soobshchestvo">
+      <h2>Сообщество и мероприятия</h2>
+      <p>[клубы, фестивали, соревнования]</p>
+    </section>
+
+    <!-- ===== Необязательный: Как превратить в доход (только где это реально) ===== -->
+    <section id="dohod">
+      <h2>Как превратить в доход</h2>
+      <p>[…]</p>
+    </section>
+
+    <!-- ===== Необязательный: Вопросы и ответы ===== -->
+    <section id="voprosy">
+      <h2>Вопросы и ответы</h2>
+      <h3>[Вопрос?]</h3>
+      <p>[Ответ.]</p>
+    </section>
+
+    <!-- ===== 9. Похожие хобби (обязательный, всегда последний; 3–5 ссылок как в related из js/data.js) ===== -->
+    <section id="pohozhie">
+      <h2>Похожие хобби</h2>
+      <ul class="related-grid">
+        <li><a href="[slug].html"><span class="emoji" aria-hidden="true">[эмодзи]</span><span><strong>[Название]</strong><small>[Чем похоже, одна строка]</small></span></a></li>
+        <li><a href="[slug].html"><span class="emoji" aria-hidden="true">[эмодзи]</span><span><strong>[Название]</strong><small>[Чем похоже, одна строка]</small></span></a></li>
+        <li><a href="[slug].html"><span class="emoji" aria-hidden="true">[эмодзи]</span><span><strong>[Название]</strong><small>[Чем похоже, одна строка]</small></span></a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <p class="article-footer-note">Статья написана авторами Хоббипедии. Суммы ориентировочные, оценка на [месяц и год].</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Хоббипедия. Тексты написаны авторами проекта.</span>
+    <span><a href="../catalog.html">Каталог хобби</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

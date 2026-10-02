@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог хобби — Хоббипедия</title>
+  <meta name="description" content="Каталог хобби с фильтрами по стоимости, времени, месту, формату, активности и сложности.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%232e6a4f'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Georgia'>Х</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true">Х</span>Хоббипедия</a>
+    <nav class="main-nav" aria-label="Основное меню">
+      <a href="catalog.html" aria-current="page">Каталог</a>
+      <a href="categories.html">Категории</a>
+      <a href="about.html">О проекте</a>
+    </nav>
+    <form class="header-search" action="catalog.html" method="get" role="search">
+      <label class="visually-hidden" for="header-q">Поиск хобби</label>
+      <input id="header-q" type="search" name="q" placeholder="Поиск по названию или тегу">
+    </form>
+  </div>
+</header>
+
+<main class="container" data-catalog="root">
+
+  <div class="page-head">
+    <h1>Каталог хобби</h1>
+    <p>Отметьте подходящие параметры: внутри одной группы подойдёт любой из отмеченных вариантов, а разные группы работают вместе.</p>
+  </div>
+
+  <nav class="category-chips" aria-label="Категории" data-catalog="chips"></nav>
+
+  <div class="catalog">
+    <details class="filters" open>
+      <summary>Фильтры</summary>
+      <form class="filters-body" data-catalog="filters" onsubmit="return false">
+        <div class="filter-search">
+          <label class="visually-hidden" for="catalog-q">Поиск</label>
+          <input id="catalog-q" type="search" placeholder="Название или тег" data-catalog="q" autocomplete="off">
+        </div>
+        <div data-catalog="groups"></div>
+        <button class="btn btn-ghost" type="reset" style="width:100%">Сбросить фильтры</button>
+      </form>
+    </details>
+
+    <section aria-live="polite">
+      <div class="category-intro" data-catalog="intro" hidden></div>
+      <div class="results-bar">
+        <p class="results-count" data-catalog="count"></p>
+        <label>Сортировка
+          <select data-catalog="sort">
+            <option value="title">по названию</option>
+            <option value="difficulty">сначала простые</option>
+            <option value="cost">сначала недорогие</option>
+          </select>
+        </label>
+      </div>
+      <div data-catalog="results">
+        <noscript><p>Для фильтров и поиска нужен JavaScript. Список всех хобби есть на странице <a href="categories.html">категорий</a>.</p></noscript>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Хоббипедия. Тексты написаны авторами проекта.</span>
+    <span><a href="about.html">О проекте и уровнях расходов</a></span>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
